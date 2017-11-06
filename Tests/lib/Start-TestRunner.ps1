@@ -51,6 +51,7 @@ function Invoke-Test {
                 ,$_ # Put all other objects back into the pipeline without unraveling them.
             }
         }
+
     $powershell.Stop()
     $powershell.Dispose()
 }
@@ -90,4 +91,6 @@ while ($true) {
 
     # Write a special "end-of-test" message over STDOUT.
     Write-Host '_END_OF_TEST_ce10a77a_'
+    [System.Console]::Error.Flush()
+    [System.Console]::Out.Flush()
 }
